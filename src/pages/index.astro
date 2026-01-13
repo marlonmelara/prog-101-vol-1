@@ -1,16 +1,37 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro';
+// 1. Importamos el componente
+import ProjectCard from '../components/ProjectCard.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Programing 101 - Practical Exercises">
+
+  <header class="header">
+      <div class="header__content">
+        <h1 class="header__title">Hello, prog-101-practice!</h1>
+        <p class="header__subtitle">My essential programming practice with HTML, CSS, JavaScript, and TypeScript...and more!</p>
+
+      </div>
+  </header>
+
+  <main class="projects-grid">
+
+    <ProjectCard
+      title="Km to Miles Conversor"
+      description="Simple distance unit converter. Implements basic multiplication logic and handling of numeric inputs."
+      icon="📏"
+      href="/projects/km-converter"
+      tags={['TS', 'HTML', 'CSS']}
+    />
+
+    <ProjectCard
+      title="Triangle Area"
+      description="Interactive geometric calculator that applies mathematical formulas for accurate results."
+      icon="📐"
+      href="/projects/triangle-area"
+      tags={['TS', 'HTML', 'CSS']}
+    />
+
+  </main>
+
+</MainLayout>

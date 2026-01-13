@@ -1,0 +1,108 @@
+---
+// 1. Importamos el Layout base
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Conversor de Kilómetros a Millas">
+
+  <header class="header">
+    <a class="header__return-home" href="/">← HOME</a>
+    <h1 class="header__title">Km to Miles Converter</h1>
+  </header>
+
+  <main class="main">
+    <form
+      id="conversionForm"
+      class="form"
+      aria-label="Formulario de conversión de distancias"
+    >
+      <div class="form__content">
+        <label for="kmInput" class="form__label">Kilometers</label>
+        <input
+          id="kmInput"
+          class="form__input"
+          type="number"
+          step="0.01"
+          placeholder="Enter the distance"
+          required
+        />
+      </div>
+
+      <div class="form__arrow" aria-hidden="true">↓</div>
+
+      <button type="submit" class="form__button">Convert to Miles</button>
+    </form>
+
+    <div
+      class="main__result"
+      id="resultOutput"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <small class="main__conv-rate">
+      1 kilometer = 0.621371 miles
+    </small>
+  </main>
+</MainLayout>
+
+<script>
+  // ==========================================
+  // LÓGICA DEL CLIENTE (Client-Side Script)
+  // ==========================================
+
+  // 1. Importamos la función pura que creamos en el paso anterior
+  import { calculateMiles } from '../../scripts/converters';
+
+  // 2. Seleccionamos los elementos del DOM
+  //    Nota: TypeScript infiere que pueden ser null, así que usaremos 'as' o validaciones
+  const form = document.getElementById('conversionForm') as HTMLFormElement;
+  const kmInput = document.getElementById('kmInput') as HTMLInputElement;
+  const resultOutput = document.getElementById('resultOutput') as HTMLDivElement;
+
+  // 3. Manejamos el evento Submit
+  if (form) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Evita que la página se recargue
+
+      // Limpiamos errores previos (si hubiera estilos de error)
+      resultOutput.textContent = '';
+
+      const kmValue = parseFloat(kmInput.value);
+
+      // Usamos un bloque try-catch para manejar el error que lanzamos en converters.ts
+      try {
+        if (isNaN(kmValue)) throw new Error("Por favor ingresa un número válido");
+
+        const miles = calculateMiles(kmValue);
+
+        // Actualizamos el DOM con el resultado
+        resultOutput.style.display = 'flex'; // Aseguramos que se vea (si estaba oculto)
+        resultOutput.textContent = `${kmValue} km son ${miles} millas`;
+
+        // Opcional: Estilo de éxito
+        resultOutput.style.borderColor = 'var(--brand-ts)';
+        resultOutput.style.backgroundColor = '#eef2ff';
+
+      } catch (error) {
+        // Manejo de errores (números negativos o texto inválido)
+        resultOutput.style.display = 'flex';
+        resultOutput.textContent = (error as Error).message;
+
+        // Opcional: Estilo de error visual
+        resultOutput.style.borderColor = 'red';
+        resultOutput.style.backgroundColor = '#ffeef0';
+      }
+    });
+  }
+</script>
+
+<style>
+  /* Pequeño ajuste local:
+    Aseguramos que el resultado tenga display: none por defecto si está vacío
+    para respetar el comportamiento de :empty que tenías antes
+  */
+  .main__result:empty {
+    display: none;
+  }
+</style>

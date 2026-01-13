@@ -1,0 +1,45 @@
+:root {
+  /* Colores */
+  --bg-body: #f3f4f6;
+  --bg-card: #fff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border-light: #e5e7eb;
+  --brand-ts: #3178c6;
+  --brand-js: #f7df1e;
+  --brand-html: #e34f26;
+  --brand-css: rebeccapurple;
+  --text-inverse: #fff;
+  --text-dark: #1f2937;
+
+  /* Espaciado y Dimensiones */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 3rem;
+  --radius-card: 16px;
+
+  /* Sombras*/
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 10%),
+    0 4px 6px -2px rgb(0 0 0 / 5%);
+
+  /* Transiciones */
+  --transition-fast: 0.2s ease-in-out;
+}
+
+/* /Reset básico */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  padding: var(--spacing-md);
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--text-main);
+  background-color: var(--bg-body);
+}

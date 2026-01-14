@@ -1,6 +1,4 @@
 ---
-// src/components/ProjectCard.astro
-
 // 1. Definimos qué datos necesita recibir este componente (Props)
 interface Props {
   title: string;
@@ -16,7 +14,7 @@ const { title, description, icon, href, tags } = Astro.props;
 //    Ejemplo: si el tag es "TS", devuelve "tech-stack__item--ts"
 const getTagClass = (tag: string) => {
   const lowerTag = tag.toLowerCase();
-  
+
   // Diccionario de mapeo según tus estilos actuales
   const map: Record<string, string> = {
     'ts': 'tech-stack__item--ts',
@@ -26,7 +24,7 @@ const getTagClass = (tag: string) => {
     'html': 'tech-stack__item--html',
     'css': 'tech-stack__item--css',
     // Si agregas SASS o React en el futuro, los añades aquí
-    'react': 'tech-stack__item--react', 
+    'react': 'tech-stack__item--react',
   };
 
   // Si no encuentra el tag, devuelve una clase base (o vacía)
@@ -36,7 +34,6 @@ const getTagClass = (tag: string) => {
 
 <article class="card">
   <a href={href} class="card__link">
-    
     <div class="card__header">
       <span class="card__icon">{icon}</span>
       <h2 class="card__title">{title}</h2>
@@ -57,12 +54,11 @@ const getTagClass = (tag: string) => {
         ))}
       </ul>
     </div>
-    
   </a>
 </article>
 
 <style>
-  /* No necesitamos CSS aquí porque todo viene de src/styles/bem-ui.css 
+  /* No necesitamos CSS aquí porque todo viene de src/styles/bem-ui.css
      que ya cargamos en el MainLayout. ¡Limpieza total!
   */
 </style>

@@ -1,14 +1,14 @@
 /* /Root: Variables Globales del Sistema de Diseño */
 :root {
   /* Paleta de Colores - Tema Minimalista Moderno */
-  --color-bg-body: #f3f4f6; /* Fondo general suave */
-  --color-bg-card: #fff; /* Fondo de tarjetas/formularios */
-  --color-text-main: #1f2937; /* Texto principal (casi negro) */
-  --color-text-muted: #6b7280; /* Texto secundario (gris) */
-  --color-text-inverse: #fff; /* Texto sobre fondos oscuros */
-  --color-accent: #3b82f6; /* Azul primario */
-  --color-accent-hover: #2563eb; /* Azul oscuro para hover */
-  --color-border: #e5e7eb; /* Bordes sutiles */
+  --color-bg-body: #f3f4f6;
+  --color-bg-card: #fff;
+  --color-text-main: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-text-inverse: #fff;
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+  --color-border: #e5e7eb;
 
   /* Tipografía */
   --font-family-base: "Inter", system-ui, -apple-system, sans-serif;
@@ -110,9 +110,7 @@ footer {
   gap: var(--spacing-lg);
   width: 100%;
   max-width: 480px;
-  padding: var(
-    --spacing-lg
-  ); /* Antes era spacing-md, aumentado para mejor aire */
+  padding: var(--spacing-lg);
 
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);

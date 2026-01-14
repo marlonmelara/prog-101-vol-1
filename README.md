@@ -1,43 +1,83 @@
-# Astro Starter Kit: Minimal
+# PROG-101-VOL-1
 
-```sh
-npm create astro@latest -- --template minimal
-```
+> A collection of practical programming exercises and mini-projects built with TypeScript and Astro to master coding fundamentals.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This repository contains a collection of practical programming exercises, migrated to a modern component-based architecture.
 
-## 🚀 Project Structure
+## 🚀 Technologies
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Framework:** [Astro 5.0](https://astro.build/) (Islands Architecture and Server-First)
+- **Language:** TypeScript (Strict logic separated from the DOM)
+- **Styling:** Modern CSS3 with **BEM** methodology and CSS Variables.
+- **Routing:** Astro ClientRouter (SPA feel with smooth transitions).
+
+## 📂 Project Structure
+
+The architecture follows the separation of concerns pattern:
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+├── components/      # Reusable UI components (ProjectCard, etc.)
+├── layouts/         # Base templates (MainLayout)
+├── pages/           # Project routes and views
+│   ├── index.astro  # Home page
+│   └── projects/    # Individual mini-applications
+├── scripts/         # 🧠 Pure business logic in TypeScript (No DOM)
+└── styles/          # Design system
+    ├── global.css   # Reset and variables (:root)
+    └── bem-ui.css   # BEM blocks and elements
+
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🛠️ Installation and Usage
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. **Clone the repository:**
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+git clone [https://github.com/your-username/PROG-101-VOL-1.git](https://github.com/your-username/PROG-101-VOL-1.git)
+cd PROG-101-VOL-1
 
-## 🧞 Commands
+```
 
-All commands are run from the root of the project, from a terminal:
+2. **Install dependencies:**
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+npm install
 
-## 👀 Want to learn more?
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+3. **Start development server:**
+
+```bash
+npm run dev
+
+```
+
+Visit `http://localhost:4321` in your browser.
+
+## 📦 Available Scripts
+
+| Command           | Description                                              |
+| ----------------- | -------------------------------------------------------- |
+| `npm run dev`     | Starts the local development server.                     |
+| `npm run build`   | Compiles the project for production (static generation). |
+| `npm run preview` | Local preview of the production build.                   |
+| `npm run astro`   | Runs Astro CLI commands (add, check, etc).               |
+
+## 📝 Included Exercises
+
+1. **Km to Miles Converter:** Unit converter with type validation and error handling.
+2. **Triangle Area Calculator:** Interactive geometric calculator.
+
+## 🤝 Contribution Standard
+
+Commits follow the project's established convention:
+
+- `[FEAT]`: New features.
+- `[FIX]`: Bug fixes.
+- `[REFACTOR]`: Code changes that do not alter functionality.
+- `[STYLE]`: Format or CSS style changes.
+
+---
+
+Made with 🚀 and TypeScript.

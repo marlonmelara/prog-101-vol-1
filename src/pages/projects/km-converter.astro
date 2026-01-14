@@ -54,7 +54,9 @@ import MainLayout from '../../layouts/MainLayout.astro';
   // 1. Importamos la función pura que creamos en el paso anterior
   import { calculateMiles } from '../../scripts/converters';
 
-  // 2. Seleccionamos los elementos del DOM
+  
+  document.addEventListener('astro:page-load', ()=> {
+// 2. Seleccionamos los elementos del DOM
   //    Nota: TypeScript infiere que pueden ser null, así que usaremos 'as' o validaciones
   const form = document.getElementById('conversionForm') as HTMLFormElement;
   const kmInput = document.getElementById('kmInput') as HTMLInputElement;
@@ -95,6 +97,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
       }
     });
   }
+  })
+  
 </script>
 
 <style>

@@ -60,7 +60,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
   // LÓGICA DEL CLIENTE
   import { calculateTriangleArea } from '../../scripts/geometry';
 
-  const form = document.getElementById('calculatorForm') as HTMLFormElement;
+  document.addEventListener('astro:page-load', () => {
+    const form = document.getElementById('calculatorForm') as HTMLFormElement;
   const baseInput = document.getElementById('baseInput') as HTMLInputElement;
   const heightInput = document.getElementById('heightInput') as HTMLInputElement;
   const resultOutput = document.getElementById('resultOutput') as HTMLDivElement;
@@ -96,6 +97,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
       }
     });
   }
+  })
+  
 </script>
 
 <style>

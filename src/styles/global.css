@@ -1,31 +1,61 @@
 :root {
-  /* Colores */
+  /* --- Paleta Unificada --- */
+
+  /* Fondos */
   --bg-body: #f3f4f6;
   --bg-card: #fff;
+  /* Alias para compatibilidad con tus mini-proyectos */
+  --color-bg-body: var(--bg-body);
+  --color-bg-card: var(--bg-card);
+
+  /* Textos */
   --text-main: #111827;
   --text-muted: #6b7280;
-  --border-light: #e5e7eb;
+  --text-inverse: #fff;
+  --text-dark: #1f2937;
+  /* Alias */
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverse: var(--text-inverse);
+
+  /* Branding / Acentos */
   --brand-ts: #3178c6;
   --brand-js: #f7df1e;
   --brand-html: #e34f26;
   --brand-css: rebeccapurple;
-  --text-inverse: #fff;
-  --text-dark: #1f2937;
 
-  /* Espaciado y Dimensiones */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 0.75rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 3rem;
-  --radius-card: 16px;
+  /* Colores UI (Botones y Forms) */
+  --color-accent: #3b82f6; /* Azul primario */
+  --color-accent-hover: #2563eb; /* Azul hover */
+  --color-border: #e5e7eb;
+  --border-light: var(--color-border);
 
-  /* Sombras*/
+  /* --- Tipografía --- */
+  --font-family-base: "Inter", system-ui, -apple-system, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.25rem;
+
+  /* --- Espaciado y Dimensiones --- */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 0.75rem; /* 12px */
+  --spacing-md: 1.5rem; /* 24px */
+  --spacing-lg: 3rem; /* 48px */
+  --spacing-xl: 4rem; /* 64px - Agregado porque se usa en el header */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-card: var(--radius-lg);
+
+  /* --- Sombras y Efectos --- */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
   --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 10%),
     0 4px 6px -2px rgb(0 0 0 / 5%);
 
-  /* Transiciones */
-  --transition-fast: 0.2s ease-in-out;
+  --transition-base: 0.2s ease-in-out;
+  --transition-fast: var(--transition-base);
 }
 
 /* /Reset básico */
